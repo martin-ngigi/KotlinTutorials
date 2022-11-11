@@ -16,4 +16,13 @@ fun main(){
         println(myArray[i])
         i++ //increment i by 1
     }
+
+    //calculate of sum from 1 to 5
+    var j =0
+    var sum =0
+    while (j<5){
+        sum += j
+        j++
+    }
+    println("\nSum is: $sum")
 }
