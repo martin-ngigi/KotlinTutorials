@@ -5,6 +5,9 @@ fun main(){
     println("2 power 4 is $pow")
 
     println("2 * 3 is : ${multiply(2,3)}")
+
+    var list = listOf(3,6,2)
+    println("\nList : $list")
 }
 
 fun printPowWithReturn(base: Int, exponent: Int) : Int{ //The last Int is the return Type
@@ -17,3 +20,10 @@ fun printPowWithReturn(base: Int, exponent: Int) : Int{ //The last Int is the re
 
 //one line function
 fun multiply(a:Int, b:Int) = a*b
+
+//printing a list
+fun printList(list: List<Int>){
+    for (i in list){
+        println(list[i])
+    }
+}
