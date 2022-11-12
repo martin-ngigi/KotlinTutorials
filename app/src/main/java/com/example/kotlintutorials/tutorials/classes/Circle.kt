@@ -1,9 +1,12 @@
 package com.example.kotlintutorials.tutorials.classes
 
-class Circle(var radius: Double) { //"()" is the contructor
-    //init is always called whren const is created
+//"(var radius: Double)" means the constructor
+//"Shape("Circle")" means we are inheriting the Shape and passing "Circle" as our shapeName
+class Circle(var radius: Double):Shape("Circle") {
+    //init is always called when const is created
     init {
-        println("Circle created with radius : $radius")
+        //$name has been inherited from Shape class
+        println("$name  created with radius : $radius")
     }
 
     var pi = 3.141592

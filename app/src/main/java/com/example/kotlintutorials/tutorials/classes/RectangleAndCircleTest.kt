@@ -10,8 +10,11 @@ fun  main(){
 
 
     //create an instance of circle with radius 5
+    println()
     var circle = Circle(5.0)
-    println("\nCircle are is : ${circle.area()}")
+    circle.changeName("CIRCLE")//change circle name
+    println("Circle name is now ${circle.name}")
+    println("Circle are is : ${circle.area()}")
     println("Circle perimeter is : ${circle.parameter()}")
 
     //create another instance of circle with radius 7
