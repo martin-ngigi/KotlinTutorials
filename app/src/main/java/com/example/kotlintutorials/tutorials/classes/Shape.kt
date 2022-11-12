@@ -7,7 +7,7 @@ open class Shape(var name: String) {
         println("I am the super class")
     }
 
-    public fun  changeName(newName: String){
+    fun  changeName(newName: String){
         name = newName
     }
 }

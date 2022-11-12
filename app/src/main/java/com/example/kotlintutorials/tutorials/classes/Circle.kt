@@ -11,7 +11,7 @@ class Circle(var radius: Double):Shape("Circle") {
 
     private var pi = 3.141592
 
-    public fun area() = radius*radius*pi
+    fun area() = radius*radius*pi
 
-    public fun parameter() = 2*radius*pi
+    fun parameter() = 2*radius*pi
 }

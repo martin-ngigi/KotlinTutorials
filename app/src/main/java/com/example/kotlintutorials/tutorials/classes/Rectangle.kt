@@ -9,9 +9,9 @@ class Rectangle(var a: Double, var b: Double): Shape("Rectangle") {
         println("This $name has been created with a = $a and  b= $b")
     }
 
-    public fun area() = a*b
+    fun area() = a*b
 
-    public fun parameter() = 2*(a+b)
+    fun parameter() = 2*(a+b)
 
-    public fun isSquare() = a==b
+    fun isSquare() = a==b
 }
