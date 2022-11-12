@@ -1,5 +1,8 @@
 package com.example.kotlintutorials.tutorials.classes
 
+import kotlin.math.PI
+import kotlin.random.Random
+
 //"(var radius: Double)" means the constructor
 //"Shape("Circle")" means we are inheriting the Shape and passing "Circle" as our shapeName
 class Circle(var radius: Double):Shape("Circle") {
@@ -11,12 +14,18 @@ class Circle(var radius: Double):Shape("Circle") {
         println("$name  created perimeter : ${perimeter()}")
     }
 
+    companion object {
+        fun randomCircle(): Circle{
+            //chose radius randomly
+            val radius = Random.nextDouble(1.0, 10.0)
+            return Circle(radius)
+        }
+    }
 
-    private var pi = 3.141592
 
     //override the area from superclass
-    override fun  area() = radius*radius*pi
+    override fun  area() = radius*radius* PI
 
     //override the perimeter from superclass
-    override fun perimeter() = 2*radius*pi
+    override fun perimeter() = 2*radius* PI
 }

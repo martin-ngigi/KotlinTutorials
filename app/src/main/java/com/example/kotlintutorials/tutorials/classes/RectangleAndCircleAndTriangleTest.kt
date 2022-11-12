@@ -42,6 +42,8 @@ fun  main(){
     println("Maximum area of circle and rectangle and triangle is : $maxAreaRectAndCircleTriangle")
 
 
+    //testing companion object... No need to create instance object since instance is already created in Random object
+    val circleRandom = Circle.randomCircle()
 }
 
 //Overloading methods
