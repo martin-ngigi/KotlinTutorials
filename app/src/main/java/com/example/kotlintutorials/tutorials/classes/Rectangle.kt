@@ -9,6 +9,10 @@ class Rectangle(var a: Double, var b: Double): Shape("Rectangle") {
         println("This $name has been created with a = $a and  b= $b")
     }
 
+    //INCASE THESE ABSTRACT CLASSES ARE NOT
+    //IMPLEMENTED, PRESS Ctrl + o to implement them automatically ;-)
+
+
     //override the area from superclass
     override fun area() = a*b
 
