@@ -9,9 +9,9 @@ class Circle(var radius: Double):Shape("Circle") {
         println("$name  created with radius : $radius")
     }
 
-    var pi = 3.141592
+    private var pi = 3.141592
 
-    fun area() = radius*radius*pi
+    public fun area() = radius*radius*pi
 
-    fun parameter() = 2*radius*pi
+    public fun parameter() = 2*radius*pi
 }
