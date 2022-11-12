@@ -7,7 +7,10 @@ class Circle(var radius: Double):Shape("Circle") {
     init {
         //$name has been inherited from Shape class
         println("$name  created with radius : $radius")
+        println("$name  created area  : ${area()}")
+        println("$name  created perimeter : ${perimeter()}")
     }
+
 
     private var pi = 3.141592
 
