@@ -11,7 +11,9 @@ class Circle(var radius: Double):Shape("Circle") {
 
     private var pi = 3.141592
 
-    fun area() = radius*radius*pi
+    //override the area from superclass
+    override fun  area() = radius*radius*pi
 
-    fun parameter() = 2*radius*pi
+    //override the perimeter from superclass
+    override fun perimeter() = 2*radius*pi
 }

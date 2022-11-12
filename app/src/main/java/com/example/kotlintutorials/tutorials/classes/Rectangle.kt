@@ -9,9 +9,11 @@ class Rectangle(var a: Double, var b: Double): Shape("Rectangle") {
         println("This $name has been created with a = $a and  b= $b")
     }
 
-    fun area() = a*b
+    //override the area from superclass
+    override fun area() = a*b
 
-    fun parameter() = 2*(a+b)
+    //override the perimeter from superclass
+    override fun perimeter() = 2*(a+b)
 
     fun isSquare() = a==b
 }
