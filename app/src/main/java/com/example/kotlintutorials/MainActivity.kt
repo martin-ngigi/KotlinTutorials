@@ -3,6 +3,7 @@ package com.example.kotlintutorials
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.RadioButton
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -48,6 +49,27 @@ class MainActivity : AppCompatActivity() {
         btn_change_image.setOnClickListener {
             //change the image
             iV_image_android.setImageResource(R.drawable.android2)
+        }
+
+        //handle btn_order when clicked
+        btn_order.setOnClickListener {
+            //check what user has checked in the radio button group
+            val checkedMeatRadioButtonId = rgMeat.checkedRadioButtonId
+            val meat = findViewById<RadioButton>(checkedMeatRadioButtonId)
+
+            //should return true or false
+            val cheese = cbCheese.isChecked
+            val onions = cbOnions.isChecked
+            val salad = cbSalad.isChecked
+
+            val orderString = "You ordered a bugger with:\n"+
+                    "${meat.text}\n"+
+                    (if (cheese) "\nCheese" else "")+ //if true.. answer is cheese else its empty
+                    (if (onions) "\nOnions" else "")+
+                    (if (salad) "\nSalad" else "")
+
+            //set to UI
+            tv_order.text = orderString
         }
     }
 }
