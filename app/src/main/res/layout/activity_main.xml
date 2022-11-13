@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,133 +7,140 @@
     android:layout_margin="15dp"
     tools:context=".MainActivity">
 
-    <!-- Use Ctrl+alt+L to reformat code-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!--To set the two views(i.e fname and lname) horizontally  constraint layout, select the two views,
-     then right click, select > chains > horizontal chains... Then set the width of each view to 0dp-->
 
-    <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
-    <EditText
-        android:id="@+id/edt_firstname"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="First Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/edt_lastname"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Use Ctrl+alt+L to reformat code-->
 
-    <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
+        <!--To set the two views(i.e fname and lname) horizontally  constraint layout, select the two views,
+         then right click, select > chains > horizontal chains... Then set the width of each view to 0dp-->
 
-    <EditText
-        android:id="@+id/edt_lastname"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Last Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/edt_firstname"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
+        <EditText
+            android:id="@+id/edt_firstname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="First Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/edt_lastname"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
-    <EditText
-        android:id="@+id/edt_birth_date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Birth Date"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_firstname" />
+        <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
 
-    <!--To set the two views(i.e fname and lname) horizontally  constraint layout, select the two views,
-    then right click, select > chains > horizontal chains... Then set the width of each view to 0dp-->
+        <EditText
+            android:id="@+id/edt_lastname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Last Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/edt_firstname"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
-    <EditText
-        android:id="@+id/edt_country"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Country"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/btn_apply"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_birth_date" />
+        <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
+        <EditText
+            android:id="@+id/edt_birth_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Birth Date"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_firstname" />
 
-    <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
-    <Button
-        android:id="@+id/btn_apply"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Apply"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/edt_country"
-        app:layout_constraintTop_toBottomOf="@+id/edt_birth_date" />
+        <!--To set the two views(i.e fname and lname) horizontally  constraint layout, select the two views,
+        then right click, select > chains > horizontal chains... Then set the width of each view to 0dp-->
 
-    <!--If the text is too long, "ellipsize" will create two dots at the end of the defined "maxLines" -->
-    <TextView
-        android:id="@+id/tv_results"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:ellipsize="end"
-        android:maxLines="2"
-        android:text="What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_country" />
+        <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
+        <EditText
+            android:id="@+id/edt_country"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Country"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/btn_apply"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_birth_date" />
 
-    <EditText
-        android:id="@+id/edt_firstNumber"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:hint="first number"
-        android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/edt_secondNumber"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_results" />
+        <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
+        <Button
+            android:id="@+id/btn_apply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Apply"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/edt_country"
+            app:layout_constraintTop_toBottomOf="@+id/edt_birth_date" />
 
-    <EditText
-        android:id="@+id/edt_secondNumber"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:hint="second number"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/edt_firstNumber"
-        app:layout_constraintTop_toBottomOf="@+id/tv_results" />
+        <!--If the text is too long, "ellipsize" will create two dots at the end of the defined "maxLines" -->
+        <TextView
+            android:id="@+id/tv_results"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_country" />
 
-    <Button
-        android:id="@+id/btn_add"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Add"
-        app:layout_constraintEnd_toStartOf="@+id/tv_sum"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_firstNumber" />
+        <EditText
+            android:id="@+id/edt_firstNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="first number"
+            android:inputType="number"
+            app:layout_constraintEnd_toStartOf="@+id/edt_secondNumber"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_results" />
 
-    <TextView
-        android:id="@+id/tv_sum"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Results"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_add"
-        app:layout_constraintTop_toBottomOf="@+id/edt_secondNumber" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/edt_secondNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="second number"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/edt_firstNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tv_results" />
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            app:layout_constraintEnd_toStartOf="@+id/tv_sum"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_firstNumber" />
+
+        <TextView
+            android:id="@+id/tv_sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Results"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_add"
+            app:layout_constraintTop_toBottomOf="@+id/edt_secondNumber" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
