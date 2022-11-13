@@ -8,6 +8,8 @@
     tools:context=".MainActivity">
 
 
+    <!--To set the two views(i.e fname and lname) horizontally, select the two views
+     then right click, select > chains > horizontal chains... Then set the width of each to 0dp-->
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="0dp"
