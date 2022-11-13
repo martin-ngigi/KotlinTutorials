@@ -275,15 +275,48 @@
                 android:textAllCaps="false"/>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_openSecond"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Open Second Activity"
-            android:textAllCaps="false"
-            />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter data to send it to the next activity"
+                android:textAlignment="center"/>
+
+            <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
+            <EditText
+                android:id="@+id/edt_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                />
+
+            <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
+
+            <EditText
+                android:id="@+id/edt_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:inputType="number"
+                />
+
+            <Button
+                android:id="@+id/btn_openSecond"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Open Second Activity"
+                android:textAllCaps="false"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -10,6 +10,15 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
+        //get data from MainActivity.kt
+        val fullName = intent.getStringExtra("Extra_full_Name")
+        val age = intent.getIntExtra("Extra_age", 0) // 0 is set in case "Extra_age" is empty
+
+        //get person object
+        val person= intent.getSerializableExtra("Extra_Person") as Person
+        //set data to the textview
+        tv_dataFromMain.text = "Full Names: $fullName \nAge: $age \n\n ${person.fullName}\n${person.age}"
+
         //handle btn_back when clicked
         btn_back.setOnClickListener {
             //go to main activity

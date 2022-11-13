@@ -94,11 +94,32 @@ class MainActivity : AppCompatActivity() {
         //handle btn_openSecond when clicked
         btn_openSecond.setOnClickListener {
             //open second activity
-            //"Intent(this, SecondActivity::class.java)" will create an instance of intent
-            //"also {startActivity(it) }" will start the activity
-            Intent(this, SecondActivity::class.java).also {
-                startActivity(it) //it refers to the instance of intent
+
+            //check if edit texts are empty
+            if (edt_full_name.text.isEmpty() || edt_age.text.isEmpty()){
+                Toast.makeText(this, "Full Name and Age cant be empty", Toast.LENGTH_SHORT).show()
             }
+            else{
+
+                //get data from ui
+                val full_name = edt_full_name.text.toString()
+                val age = edt_age.text.toString().toInt()
+
+                //use person object to pass data
+                val person = Person(full_name, age)
+
+                //"Intent(this, SecondActivity::class.java)" will create an instance of intent
+                //"also {startActivity(it) }" will start the activity
+                Intent(this, SecondActivity::class.java).also {
+                    //put extra will set the data that is to be passed to the next activity
+                    it.putExtra("Extra_full_Name", full_name)
+                    it.putExtra("Extra_age", age)
+                    //pass data inform of object
+                    it.putExtra("Extra_Person", person)
+                    startActivity(it) //it refers to the instance of intent
+                }
+            }
+
         }
     }
 }
