@@ -141,6 +141,28 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btn_add"
             app:layout_constraintTop_toBottomOf="@+id/edt_secondNumber" />
+
+        <!-- Use scaleType="centerCrop" to make the image fit perfectly inside the imageview-->
+        <ImageView
+            android:id="@+id/iV_image_android"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/android_developer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add" />
+
+        <Button
+            android:id="@+id/btn_change_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iV_image_android" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

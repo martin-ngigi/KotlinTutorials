@@ -9,6 +9,9 @@ class TIPS {
 
      3.To change id and apply the change to all the references, select the id, then press shift+f6
 
+     4.Use scaleType="centerCrop" to make the image fit perfectly inside the imageview
+
+
 
 
      */

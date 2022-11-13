@@ -32,10 +32,22 @@ class MainActivity : AppCompatActivity() {
 
         //handle btn_add when clicked
         btn_add.setOnClickListener {
-            val firstNumber = edt_firstNumber.text.toString().toInt()
-            val secondNumber = edt_secondNumber.text.toString().toInt()
+            //check if inputs are empty or not
+            if ((!edt_firstNumber.text.toString().isEmpty()) && (!edt_secondNumber.text.toString().isEmpty())){
+                //get Text from the view
+                val firstNumber = edt_firstNumber.text.toString().toInt() // The "?" checks if null or not. The ".toInt()" converts from string to integer
+                val secondNumber = edt_secondNumber.text.toString().toInt()
 
-            tv_sum.text = "${firstNumber+secondNumber}"
+                //set text to the view
+                tv_sum.text = "${firstNumber+secondNumber}"
+
+            }
+        }
+
+        //handle btn_change_image when clicked
+        btn_change_image.setOnClickListener {
+            //change the image
+            iV_image_android.setImageResource(R.drawable.android2)
         }
     }
 }
