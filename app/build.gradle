@@ -1,6 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    //ADD THESE SO ALLOW AUTOMATIC IMPORT OF VIEWS WITHOUT DECLARING : findview by id
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
