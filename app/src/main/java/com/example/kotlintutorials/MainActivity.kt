@@ -29,5 +29,13 @@ class MainActivity : AppCompatActivity() {
             //set text to the view
             tv_results.text = "Your Results: firstName: $firstName, lastName: $lastName, $birthDate: birthDate, country: $country"
         }
+
+        //handle btn_add when clicked
+        btn_add.setOnClickListener {
+            val firstNumber = edt_firstNumber.text.toString().toInt()
+            val secondNumber = edt_secondNumber.text.toString().toInt()
+
+            tv_sum.text = "${firstNumber+secondNumber}"
+        }
     }
 }

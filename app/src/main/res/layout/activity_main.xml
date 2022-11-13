@@ -9,8 +9,8 @@
 
     <!-- Use Ctrl+alt+L to reformat code-->
 
-    <!--To set the two views(i.e fname and lname) horizontally, select the two views,
-     then right click, select > chains > horizontal chains... Then set the width of each to 0dp-->
+    <!--To set the two views(i.e fname and lname) horizontally  constraint layout, select the two views,
+     then right click, select > chains > horizontal chains... Then set the width of each view to 0dp-->
 
     <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
     <EditText
@@ -51,6 +51,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_firstname" />
 
+    <!--To set the two views(i.e fname and lname) horizontally  constraint layout, select the two views,
+    then right click, select > chains > horizontal chains... Then set the width of each view to 0dp-->
+
     <!--To change id and apply the change to all the references, select the id, then press shift+f6 -->
     <EditText
         android:id="@+id/edt_country"
@@ -81,10 +84,56 @@
         android:id="@+id/tv_results"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:ellipsize="end"
         android:maxLines="2"
         android:text="What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_country" />
+
+    <EditText
+        android:id="@+id/edt_firstNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="first number"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/edt_secondNumber"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_results" />
+
+    <EditText
+        android:id="@+id/edt_secondNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="second number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edt_firstNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tv_results" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintEnd_toStartOf="@+id/tv_sum"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_firstNumber" />
+
+    <TextView
+        android:id="@+id/tv_sum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Results"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_add"
+        app:layout_constraintTop_toBottomOf="@+id/edt_secondNumber" />
 </androidx.constraintlayout.widget.ConstraintLayout>
