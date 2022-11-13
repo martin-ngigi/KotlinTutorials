@@ -1,5 +1,6 @@
 package com.example.kotlintutorials
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -88,6 +89,16 @@ class MainActivity : AppCompatActivity() {
                 show()
             }
 
+        }
+
+        //handle btn_openSecond when clicked
+        btn_openSecond.setOnClickListener {
+            //open second activity
+            //"Intent(this, SecondActivity::class.java)" will create an instance of intent
+            //"also {startActivity(it) }" will start the activity
+            Intent(this, SecondActivity::class.java).also {
+                startActivity(it) //it refers to the instance of intent
+            }
         }
     }
 }
