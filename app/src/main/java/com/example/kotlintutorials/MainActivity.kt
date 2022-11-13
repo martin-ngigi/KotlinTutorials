@@ -1,12 +1,17 @@
 package com.example.kotlintutorials
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.custom_toast.*
 
@@ -61,6 +66,10 @@ class MainActivity : AppCompatActivity() {
         btn_openSecond.setOnClickListener {
             //open second activity
             openSecondActivity()
+        }
+
+        btn_requestPermission.setOnClickListener {
+            requestPermissions()
         }
     }
 
@@ -138,5 +147,60 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun hasWritExtraStoragePermission() =
+        ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+
+    private fun hasLocationForegroundPermission() =
+        ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+
+
+    private fun hasLocationBackgroundPermission() =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED
+        } else {
+            TODO("VERSION.SDK_INT < Q")
+        }
+
+
+    private fun requestPermissions(){
+        //request the user to allow permissions
+
+        //if user has not permitted the permission, add the permission to the list as list
+        val permissionToRequest = mutableListOf<String>()
+        if (!hasWritExtraStoragePermission()){
+            permissionToRequest.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        }
+        if (!hasLocationForegroundPermission()) {
+            permissionToRequest.add(Manifest.permission.ACCESS_COARSE_LOCATION)
+        }
+        if (!hasLocationBackgroundPermission()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                permissionToRequest.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION)
+            }
+        }
+
+        //retrieve all the permissions not permitted from the list and transform them to array of string
+        if (permissionToRequest.isNotEmpty()){
+            ActivityCompat.requestPermissions(this, permissionToRequest.toTypedArray(), 0)
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 0 && grantResults.isNotEmpty()){
+            //traverse the array of all the permissions required using for loo[
+            for (i in grantResults.indices){
+                if (grantResults[i] == PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(this, "onRequestPermissionsResult\n${permissions[i]} granted ;-)", Toast.LENGTH_LONG).show()
+                    Log.d("RequestPermissions", "onRequestPermissionsResult:\n ${permissions[i]} granted ;-) ")
+                }
+            }
+        }
     }
 }
