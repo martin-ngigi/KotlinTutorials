@@ -261,6 +261,19 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_toast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toast Something"
+                android:textAllCaps="false"/>
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -3,8 +3,11 @@ package com.example.kotlintutorials
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.widget.RadioButton
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.custom_toast.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -70,6 +73,21 @@ class MainActivity : AppCompatActivity() {
 
             //set to UI
             tv_order.text = orderString
+        }
+
+        //handle btn_toast when clicked
+        btn_toast.setOnClickListener {
+            //Toast.makeText(this, "This is my toast", Toast.LENGTH_SHORT).show()
+
+            //Custom made toast with UI...
+            Toast(this).apply {
+                duration = Toast.LENGTH_LONG
+                //"Gravity.END,Gravity.END" Will make the bar appear at the bottom... but can be changed to "0,0"
+                setGravity(Gravity.FILL_HORIZONTAL, Gravity.END,Gravity.END)
+                view = layoutInflater.inflate(R.layout.custom_toast, layout_custom_toast)
+                show()
+            }
+
         }
     }
 }
