@@ -13,6 +13,9 @@ import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -108,6 +111,26 @@ class MainActivity : AppCompatActivity() {
         }
         btn_multiChoiceDialog.setOnClickListener {
             multiChoiceDialog()
+        }
+
+
+        //By default, spinner will use the strings in R>Strings>array... But if we want to set the programmatically in the code
+        //we use the following code"
+        //we can still comment it if we want to use R.Strings.months_array
+        val customList = listOf("Monday", "Tuesday", "Wednesday", "Friday", "Saturday", "Sunday")
+        val adapter = ArrayAdapter<String>(this, com.karumi.dexter.R.layout.support_simple_spinner_dropdown_item, customList)
+        sp_months.adapter = adapter
+
+        //handle spinner
+        sp_months.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                Toast.makeText(this@MainActivity, "You selected  ${adapterView?.getItemAtPosition(position).toString()}", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
         }
     }
 
