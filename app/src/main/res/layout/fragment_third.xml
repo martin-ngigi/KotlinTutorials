@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:gravity="center"
-    tools:context=".fragments.SecondFragment">
+    tools:context=".fragments.ThirdFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/tvSecondFragment"
+        android:id="@+id/tvThirdFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Second Fragment" />
+        android:text="Third Fragment" />
 
 </LinearLayout>

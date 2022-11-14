@@ -144,6 +144,13 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+        //handle btn_bottom_nav on click listener
+        btn_bottom_nav.setOnClickListener {
+            Intent(this@MainActivity, BottomNavActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 
     private fun multiChoiceDialog() {
