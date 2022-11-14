@@ -359,6 +359,47 @@
                 android:textAllCaps="false"
                />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alert Dialog"/>
+
+            <Button
+                android:id="@+id/btn_dialogYesNoDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes Or No Dialog"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                />
+
+            <Button
+                android:id="@+id/btn_singleChoiceDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Single Choice Dialog"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                />
+            <Button
+                android:id="@+id/btn_multiChoiceDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Single Choice Dialog"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
 

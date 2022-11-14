@@ -98,6 +98,81 @@ class MainActivity : AppCompatActivity() {
                 startActivityForResult(it, IMAGE_INTENT)
             }
         }
+
+        //dialogs
+        btn_dialogYesNoDialog.setOnClickListener {
+            createAddContactDialog()
+        }
+        btn_singleChoiceDialog.setOnClickListener {
+            singleChoiceDialog()
+        }
+        btn_multiChoiceDialog.setOnClickListener {
+            multiChoiceDialog()
+        }
+    }
+
+    private fun multiChoiceDialog() {
+        val listItems = arrayOf("Item 1", "Item 2", "Item 3")
+        val mBuilder = AlertDialog.Builder(this@MainActivity)
+        mBuilder.setTitle("Single Choice dialog")
+        mBuilder.setMultiChoiceItems(listItems, booleanArrayOf(false, false, false)){ _, i, isChecked ->
+            if (isChecked){
+                Toast.makeText(this@MainActivity, "You checked  ${listItems[i]}", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this@MainActivity, "You unChecked  ${listItems[i]}", Toast.LENGTH_SHORT).show()
+            }
+             }
+            .setPositiveButton("Accept"){ _, _->
+                Toast.makeText(this@MainActivity, "You accepted multichoice options", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Decline"){ _, _->
+                Toast.makeText(this@MainActivity, "You You declined multichoice options", Toast.LENGTH_SHORT).show()
+            }
+
+        val mDialog = mBuilder.create()
+        mDialog.show()
+    }
+
+    fun singleChoiceDialog(){
+        val listItems = arrayOf("Item 1", "Item 2", "Item 3")
+        val mBuilder = AlertDialog.Builder(this@MainActivity)
+        mBuilder.setTitle("Single Choice dialog")
+        mBuilder.setSingleChoiceItems(listItems, 0) { dialogInterface, i ->
+            Toast.makeText(this@MainActivity, "You clicked ${listItems[i]}", Toast.LENGTH_SHORT).show()
+        }
+        // Set the neutral/cancel button click listener
+        mBuilder.setPositiveButton("Accept") { dialog, which ->
+            // Do something when click the neutral button
+            Toast.makeText(this@MainActivity, "You Accepted", Toast.LENGTH_SHORT).show()
+        }
+
+        // Set the neutral/cancel button click listener
+        mBuilder.setNegativeButton("Cancel") { dialog, which ->
+            // Do something when click the neutral button
+            Toast.makeText(this@MainActivity, "You declined", Toast.LENGTH_SHORT).show()
+        }
+
+        val mDialog = mBuilder.create()
+        mDialog.show()
+    }
+
+    private fun createAddContactDialog() {
+        //initialize dialog
+        val addContactDialog = AlertDialog
+            .Builder(this)
+            .setTitle("Add Contact")
+            .setMessage("Do you want tp add Mr Wainaina to your contact list")
+            .setIcon(R.drawable.ic_baseline_person_add_24)
+            .setPositiveButton("Yes"){ _, _->
+                Toast.makeText(this@MainActivity, "You added Mr Wainaina to your contact list", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("No"){ _, _->
+                Toast.makeText(this@MainActivity, "You cancelled adding Mr Wainaina to your contact list", Toast.LENGTH_SHORT).show()
+            }.create()
+
+        addContactDialog.show()
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
