@@ -337,38 +337,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Implicit Intents"/>
-
-
-            <!-- Use scaleType="centerCrop" to make the image fit perfectly inside the imageview-->
-            <ImageView
-                android:id="@+id/iV_picture"
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:layout_marginTop="5dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_baseline_account_box_24"
-                />
-
-            <Button
-                android:id="@+id/btn_change_picture"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Change Image"
-                android:layout_gravity="center"
-                android:textAllCaps="false"
-               />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="50dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="Alert Dialog"/>
 
             <Button
@@ -419,6 +387,14 @@
                 android:layout_gravity="center"
                 />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_implicit_int_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:text="Implicit intent[change imgae]"/>
+
 
         <Button
             android:id="@+id/btn_top_tool_bar"

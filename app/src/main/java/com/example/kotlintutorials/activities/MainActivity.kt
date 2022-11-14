@@ -93,13 +93,6 @@ class MainActivity : AppCompatActivity() {
             checkPermissions()
         }
 
-        //get image from  files
-        btn_change_picture.setOnClickListener {
-            Intent(Intent.ACTION_GET_CONTENT).also {
-                it.type = "image/*" //* means will look for every type of image
-                startActivityForResult(it, IMAGE_INTENT)
-            }
-        }
 
         //dialogs
         btn_dialogYesNoDialog.setOnClickListener {
@@ -130,6 +123,12 @@ class MainActivity : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
 
+        }
+
+        btn_implicit_int_image.setOnClickListener {
+            Intent(this@MainActivity, ChangeImageActivity::class.java).also {
+                startActivity(it)
+            }
         }
 
         btn_top_tool_bar.setOnClickListener {
@@ -226,14 +225,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
 
-        if (resultCode ==  Activity.RESULT_OK && requestCode == IMAGE_INTENT){
-            val uri = data?.data
-            iV_picture.setImageURI(uri)
-        }
-    }
 
 
     private fun checkPermissions() {
