@@ -11,6 +11,8 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.view.Gravity
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -89,6 +91,7 @@ class MainActivity : AppCompatActivity() {
             checkPermissions()
         }
 
+        //get image from  files
         btn_change_picture.setOnClickListener {
             Intent(Intent.ACTION_GET_CONTENT).also {
                 it.type = "image/*" //* means will look for every type of image
@@ -104,6 +107,28 @@ class MainActivity : AppCompatActivity() {
             val uri = data?.data
             iV_picture.setImageURI(uri)
         }
+    }
+
+    //inflate the menu
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.app_bar_menu, menu)
+        return true
+    }
+
+    //handle on click listener for the menu
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.mi_addContact -> Toast.makeText(this@MainActivity, "You clicked Contacts", Toast.LENGTH_SHORT).show()
+            R.id.mi_favourite -> Toast.makeText(this@MainActivity, "You clicked Favourites", Toast.LENGTH_SHORT).show()
+            R.id.mi_settings -> Toast.makeText(this@MainActivity, "You clicked Settings", Toast.LENGTH_SHORT).show()
+            R.id.mi_close -> {
+                Toast.makeText(this@MainActivity, "You clicked Close App", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+            R.id.mi_feedback -> Toast.makeText(this@MainActivity, "You clicked Feedback", Toast.LENGTH_SHORT).show()
+
+        }
+        return true
     }
 
     private fun checkPermissions() {
