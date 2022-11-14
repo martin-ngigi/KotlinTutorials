@@ -2,14 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.kotlintutorials">
-
-    <!--Not sensitive as location and-->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- Must be explicitly be granted in the app on runtime... ie add the code-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
-
+    <!-- Not sensitive as location and -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Must be explicitly be granted in the app on runtime... ie add the code -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinTutorials"
         tools:targetApi="31">
+        <activity
+            android:name=".TodosActivity"
+            android:exported="false" />
         <activity
             android:name=".SecondActivity"
             android:exported="false" />

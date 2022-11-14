@@ -47,4 +47,7 @@ dependencies {
 
     //For requesting permissions at runtime
     implementation 'com.karumi:dexter:6.2.2'
+
+    //recyclerview
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
 }

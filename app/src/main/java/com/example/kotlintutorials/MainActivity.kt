@@ -132,6 +132,13 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
+        //handle btn_todo click listener
+        btn_todo.setOnClickListener {
+            Intent(this@MainActivity, TodosActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 
     private fun multiChoiceDialog() {
@@ -157,6 +164,9 @@ class MainActivity : AppCompatActivity() {
         mDialog.show()
     }
 
+    /**
+     *
+     */
     fun singleChoiceDialog(){
         val listItems = arrayOf("Item 1", "Item 2", "Item 3")
         val mBuilder = AlertDialog.Builder(this@MainActivity)
