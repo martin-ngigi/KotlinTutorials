@@ -19,6 +19,9 @@
         android:theme="@style/Theme.KotlinTutorials"
         tools:targetApi="31">
         <activity
+            android:name=".activities.TopToolBarActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.BottomNavActivity"
             android:exported="false" />
         <activity

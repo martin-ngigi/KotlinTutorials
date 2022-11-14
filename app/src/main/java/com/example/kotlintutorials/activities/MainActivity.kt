@@ -132,6 +132,12 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        btn_top_tool_bar.setOnClickListener {
+            Intent(this@MainActivity, TopToolBarActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
         //handle btn_todo click listener
         btn_todo.setOnClickListener {
             Intent(this@MainActivity, TodosActivity::class.java).also {
@@ -229,27 +235,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //inflate the menu
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.app_bar_menu, menu)
-        return true
-    }
-
-    //handle on click listener for the menu
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.mi_addContact -> Toast.makeText(this@MainActivity, "You clicked Contacts", Toast.LENGTH_SHORT).show()
-            R.id.mi_favourite -> Toast.makeText(this@MainActivity, "You clicked Favourites", Toast.LENGTH_SHORT).show()
-            R.id.mi_settings -> Toast.makeText(this@MainActivity, "You clicked Settings", Toast.LENGTH_SHORT).show()
-            R.id.mi_close -> {
-                Toast.makeText(this@MainActivity, "You clicked Close App", Toast.LENGTH_SHORT).show()
-                finish()
-            }
-            R.id.mi_feedback -> Toast.makeText(this@MainActivity, "You clicked Feedback", Toast.LENGTH_SHORT).show()
-
-        }
-        return true
-    }
 
     private fun checkPermissions() {
         getPermission()

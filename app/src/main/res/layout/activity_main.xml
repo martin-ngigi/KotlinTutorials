@@ -421,6 +421,13 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_top_tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Top Tool Bar"/>
+
+
+        <Button
             android:id="@+id/btn_todo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
