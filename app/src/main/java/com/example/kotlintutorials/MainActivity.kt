@@ -3,15 +3,25 @@ package com.example.kotlintutorials
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.Gravity
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.DexterBuilder
+import com.karumi.dexter.MultiplePermissionsReport
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.custom_toast.*
 
@@ -21,6 +31,9 @@ class MainActivity : AppCompatActivity() {
 
 
     var TAG = "MainActivity"
+
+    //for permissions purposes
+    lateinit var dexter: DexterBuilder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,9 +82,61 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_requestPermission.setOnClickListener {
-            requestPermissions()
+            //requestPermissions()
+            checkPermissions()
         }
     }
+
+    private fun checkPermissions() {
+        getPermission()
+    }
+
+    private fun getPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            dexter = Dexter.withContext(this)
+                .withPermissions(
+                    android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                    android.Manifest.permission.ACCESS_BACKGROUND_LOCATION
+                ).withListener(object : MultiplePermissionsListener {
+                    override fun onPermissionsChecked(report: MultiplePermissionsReport) {
+                        report.let {
+
+                            if (report.areAllPermissionsGranted()) {
+                                Toast.makeText(this@MainActivity, "Permissions Granted", Toast.LENGTH_SHORT).show()
+                            } else {
+                                AlertDialog.Builder(this@MainActivity, com.google.android.material.R.style.Theme_AppCompat_Dialog).apply {
+                                    setMessage("please allow the required permissions")
+                                        .setCancelable(false)
+                                        .setPositiveButton("Settings") { _, _ ->
+                                            val reqIntent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                                                .apply {
+                                                    val uri = Uri.fromParts("package", packageName, null)
+                                                    data = uri
+                                                }
+                                            resultLauncher.launch(reqIntent)
+                                        }
+                                    // setNegativeButton(R.string.cancel) { dialog, _ -> dialog.cancel() }
+                                    val alert = this.create()
+                                    alert.show()
+                                }
+                            }
+                        }
+                    }
+                    override fun onPermissionRationaleShouldBeShown(permissions: List<PermissionRequest?>?, token: PermissionToken?) {
+                        token?.continuePermissionRequest()
+                    }
+                }).withErrorListener{
+                    Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
+                }
+        }
+        dexter.check()
+    }
+
+    private var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            result -> dexter.check()
+    }
+
 
     private fun applyMethod() {
         //get Text from the view
@@ -149,12 +214,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /*
     private fun hasWritExtraStoragePermission() =
         ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
 
     private fun hasLocationForegroundPermission() =
         ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
-
 
     private fun hasLocationBackgroundPermission() =
         ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED
@@ -164,7 +229,7 @@ class MainActivity : AppCompatActivity() {
         //request the user to allow permissions
 
         //if user has not permitted the permission, add the permission to the list as list
-        val permissionToRequest = mutableListOf<String>()
+        var permissionToRequest = mutableListOf<String>()
         if (!hasWritExtraStoragePermission()){
             permissionToRequest.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
         }
@@ -197,4 +262,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    */
 }
