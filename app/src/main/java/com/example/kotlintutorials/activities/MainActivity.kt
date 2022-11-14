@@ -156,6 +156,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+        btn_viewPager.setOnClickListener {
+            Intent(this@MainActivity, ViewPagerActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 
     private fun multiChoiceDialog() {

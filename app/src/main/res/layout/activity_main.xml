@@ -421,6 +421,12 @@
             android:layout_height="wrap_content"
             android:text="Bottom Navigations"/>
 
+        <Button
+            android:id="@+id/btn_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Pager"/>
+
     </LinearLayout>
 
 
