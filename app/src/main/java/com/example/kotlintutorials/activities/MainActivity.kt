@@ -1,9 +1,7 @@
-package com.example.kotlintutorials
+package com.example.kotlintutorials.activities
 
-import android.Manifest
 import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -19,9 +17,10 @@ import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
+import com.example.kotlintutorials.Person
+import com.example.kotlintutorials.R
+import com.example.kotlintutorials.TodosActivity
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.DexterBuilder
 import com.karumi.dexter.MultiplePermissionsReport
@@ -136,6 +135,12 @@ class MainActivity : AppCompatActivity() {
         //handle btn_todo click listener
         btn_todo.setOnClickListener {
             Intent(this@MainActivity, TodosActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        btn_fragments.setOnClickListener {
+            Intent(this@MainActivity, FragmentesExampleActivity::class.java).also {
                 startActivity(it)
             }
         }
