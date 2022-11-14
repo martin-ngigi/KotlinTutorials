@@ -1,6 +1,7 @@
 package com.example.kotlintutorials
 
 import android.Manifest
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
 
     var TAG = "MainActivity"
+
+    var IMAGE_INTENT = 5
 
     //for permissions purposes
     lateinit var dexter: DexterBuilder
@@ -84,6 +87,22 @@ class MainActivity : AppCompatActivity() {
         btn_requestPermission.setOnClickListener {
             //requestPermissions()
             checkPermissions()
+        }
+
+        btn_change_picture.setOnClickListener {
+            Intent(Intent.ACTION_GET_CONTENT).also {
+                it.type = "image/*" //* means will look for every type of image
+                startActivityForResult(it, IMAGE_INTENT)
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (resultCode ==  Activity.RESULT_OK && requestCode == IMAGE_INTENT){
+            val uri = data?.data
+            iV_picture.setImageURI(uri)
         }
     }
 
