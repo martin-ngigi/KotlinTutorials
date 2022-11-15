@@ -183,6 +183,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+        btn_service.setOnClickListener {
+            Intent(this, ServicesActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 
     private fun multiChoiceDialog() {
