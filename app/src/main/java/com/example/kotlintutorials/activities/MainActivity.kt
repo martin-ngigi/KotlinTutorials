@@ -192,6 +192,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+        btn_dragAndDrop.setOnClickListener {
+            Intent(this, DragAndDropActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 
     private fun multiChoiceDialog() {
