@@ -163,8 +163,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //open navigation drawer
         btn_nav_drawer.setOnClickListener {
             Intent(this@MainActivity, NavigationDrawerActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        //open shared prefernce activity
+        btn_shared_pref.setOnClickListener {
+            Intent(this@MainActivity, SharedPreferenceActivity::class.java).also {
                 startActivity(it)
             }
         }

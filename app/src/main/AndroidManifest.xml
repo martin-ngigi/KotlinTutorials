@@ -19,6 +19,9 @@
         android:theme="@style/Theme.KotlinTutorials"
         tools:targetApi="31">
         <activity
+            android:name=".activities.SharedPreferenceActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.NavigationDrawerActivity"
             android:exported="false" />
         <activity
