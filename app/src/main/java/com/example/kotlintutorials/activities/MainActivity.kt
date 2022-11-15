@@ -1,6 +1,5 @@
 package com.example.kotlintutorials.activities
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -9,8 +8,6 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.view.Gravity
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -185,7 +182,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_service.setOnClickListener {
-            Intent(this, ServicesActivity::class.java).also {
+            Intent(this, ServicesWithIntentActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        btn_service2.setOnClickListener {
+            Intent(this, Services2Activity::class.java).also {
                 startActivity(it)
             }
         }

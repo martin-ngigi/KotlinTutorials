@@ -5,6 +5,11 @@ import android.content.Intent
 import android.util.Log
 
 class MyIntentService: IntentService("MyIntentService") {
+    /**
+     * This service will run in seperate thread. so it wont block the main thread
+     * But it wont support multithreading
+     */
+
     init {
         instance = this
     }

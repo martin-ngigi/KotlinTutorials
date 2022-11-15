@@ -450,7 +450,14 @@
             android:id="@+id/btn_service"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notifications"/>
+            android:text="Intent Services"/>
+
+        <Button
+            android:id="@+id/btn_service2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Services 2"/>
+
 
     </LinearLayout>
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.ServicesActivity">
+    tools:context=".activities.Services2Activity">
 
 
     <LinearLayout
@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_stop_service"
+            android:id="@+id/btn_stop_service2"
             android:layout_width="0dp"
             android:layout_margin="10dp"
             android:text="Stop service"
@@ -24,7 +24,7 @@
             android:layout_weight="1"/>
 
         <Button
-            android:id="@+id/btn_start_service"
+            android:id="@+id/btn_start_service2"
             android:layout_width="0dp"
             android:layout_margin="10dp"
             android:text="Start service"
@@ -34,10 +34,25 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_serviceStatus"
+        android:id="@+id/tv_serviceStatus2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Service Stopped"/>
+
+    <EditText
+        android:id="@+id/edt_data2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Enter data to be sent."/>
+
+    <Button
+        android:id="@+id/btn_send2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:layout_gravity="center"
+        />
 
 
 </LinearLayout>
