@@ -440,6 +440,12 @@
             android:layout_height="wrap_content"
             android:text="Shared Prefernce"/>
 
+        <Button
+            android:id="@+id/btn_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notifications"/>
+
     </LinearLayout>
 
 

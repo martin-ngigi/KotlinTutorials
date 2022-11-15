@@ -176,6 +176,13 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+        //open show notificaions activity
+        btn_notifications.setOnClickListener {
+            Intent(this@MainActivity, ShowNotificationsActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 
     private fun multiChoiceDialog() {
