@@ -162,6 +162,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+        btn_nav_drawer.setOnClickListener {
+            Intent(this@MainActivity, NavigationDrawerActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 
     private fun multiChoiceDialog() {

@@ -427,6 +427,13 @@
             android:layout_height="wrap_content"
             android:text="View Pager"/>
 
+
+        <Button
+            android:id="@+id/btn_nav_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Navigation Drawer"/>
+
     </LinearLayout>
 
 

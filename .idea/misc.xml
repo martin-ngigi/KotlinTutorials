@@ -7,6 +7,7 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/activity_change_image.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/activity_fragmentes_example.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/activity_second.xml" value="0.12222222222222222" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/activity_todos.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/activity_view_page.xml" value="0.1" />
@@ -16,10 +17,12 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/fragment_second.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/fragment_third.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/item_view_pager.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/nav_header.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/raw_todo.xml" value="0.14" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/layout/row_todo.xml" value="0.140625" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/menu/app_bar_menu.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/menu/bottom_app_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/KotlinTutorials/app/src/main/res/menu/nav_drawer_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

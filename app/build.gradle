@@ -52,5 +52,6 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.2.1"
 
     //will help in bottom nav design and viewPage(image slider)
+    //also used in Navigation drawer
     implementation 'com.google.android.material:material:1.8.0-alpha02'
 }
